@@ -261,6 +261,8 @@ def main():
 			else:
 				outdir = outdir + " (" + codec + ")"
 			outdir = options.output + outdir
+			if flacre.search(outdir):
+				outdir = flacre.sub(codec, outdir)
 			if not os.path.exists(outdir):
 				os.makedirs(outdir)
 
